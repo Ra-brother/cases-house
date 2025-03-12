@@ -3,7 +3,7 @@
     "short_name": "CasesHouse",
     "icons": [
         {
-            "src": "imagens/carrinho-icom.png",
+            "src": "imagens/carrinho-icon-512x512.png",
             "sizes": "192x192",
             "type": "image/png"
         },
