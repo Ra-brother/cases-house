@@ -3,14 +3,14 @@
     "short_name": "CasesHouse",
     "icons": [
         {
-            "src": "imagens/carrinho-icon-512x512.png",
+            "src": "imagens/carrinho-icon.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "imagens/capahouse.webp",
+            "src": "imagens/capahouse.png",
             "sizes": "512x512",
-            "type": "image/webp"
+            "type": "image/png"
         }
     ],
     "start_url": "/",

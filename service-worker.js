@@ -5,7 +5,7 @@ const ASSETS = [
     '/style.css',
     '/script.js',
     '/imagens/capahouse.webp',
-    '/imagens/carrinho-icon-512x512.png',
+    '/imagens/carrinho-icon.png',
     '/imagens/produto1.webp',
     '/imagens/produto2.webp',
     '/imagens/produto3.webp'
