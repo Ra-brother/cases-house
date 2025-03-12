@@ -2,49 +2,77 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Catálogo de produtos com carrinho de compras.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="Cases House - Sua loja de capas para celular.">
     <title>Cases House</title>
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" sizes="192x192" href="imagens/icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="imagens/icon-512x512.png">
-    <link rel="apple-touch-icon" href="imagens/icon-180x180.png">
+    <link rel="icon" type="image/png" href="imagens/icon-192x192.png">
 </head>
 <body>
+    <!-- Ícone no canto superior esquerdo -->
+    <div id="icone-esquerdo">
+        <img src="imagens/capahouse.webp" alt="CapaHouse" loading="lazy">
+    </div>
+
+    <!-- Header -->
     <header>
-        <div id="icone-esquerdo">
-            <picture>
-                <source srcset="imagens/capahouse.webp" type="image/webp">
-                <img src="imagens/capahouse.jpg" alt="Ícone da Casa" loading="lazy" width="60" height="60">
-            </picture>
-        </div>
-        <h1>Capas para seu Celular</h1>
+        <h1>Cases House</h1>
     </header>
+
+    <!-- Main -->
     <main>
-        <section id="produtos"></section>
-        
-        <div id="carrinho-container" aria-label="Carrinho de compras">
-            <button id="carrinho-icone" aria-label="Abrir carrinho">
-                <picture>
-                    <source srcset="carrinho-icon.png" type="image/webp">
-                    <img src="carrinho-icon.png" alt="Carrinho" loading="lazy" width="24" height="24">
-                </picture>
-                <span id="carrinho-texto">Carrinho</span>
-            </button>
-            <div id="carrinho-conteudo">
-                <ul id="lista-carrinho"></ul>
-                <p>Total: R$ <span id="total-carrinho">0.00</span></p>
-                <button id="fechar-pedido" onclick="fecharPedido()" aria-label="Fechar pedido">Fechar Pedido</button>
-            </div>
-        </div>
+        <div id="produtos"></div>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>Contato: <a href="mailto:contato@catalogo.com">contato@catalogo.com</a> | 
-        Endereço: Rua Exemplo, 123 - Cidade | 
-        <a href="sms:+5511999999999">Enviar SMS</a></p>
+        <p>&copy; 2023 Cases House. Todos os direitos reservados.</p>
+        <div class="rodape-info">
+            <p>
+                <strong>Endereço:</strong>
+                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Ariano+Suassuna,+500,+Santo+Amaro,+Recife" target="_blank">Av. Ariano Suassuna, 500, Santo Amaro, Recife</a>
+            </p>
+            <p>
+                <strong>Telefone:</strong>
+                <a href="tel:+5581999999999">(81) 99999-9999</a>
+            </p>
+            <p>
+                <strong>E-mail:</strong>
+                <a href="mailto:casehouse@capas.com.br">casehouse@capas.com.br</a>
+            </p>
+            <p>
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.me/5581999999999" target="_blank">(81) 99999-9999</a>
+            </p>
+            <p>
+                <strong>SMS:</strong>
+                <a href="sms:+5581999999999">(81) 99999-9999</a>
+            </p>
+        </div>
     </footer>
-    <script src="script.js" defer></script>
+
+    <!-- Carrinho -->
+    <div id="carrinho-container">
+        <div id="carrinho-icone">
+            <img src="imagens/carrinho-icon.png" alt="Carrinho" loading="lazy">
+            <span id="carrinho-texto">Carrinho</span>
+        </div>
+        <div id="carrinho-conteudo">
+            <ul id="lista-carrinho"></ul>
+            <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+            <button id="fechar-pedido" onclick="fecharPedido()">Fechar Pedido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker registrado com sucesso!'))
+                .catch((error) => console.log('Erro ao registrar Service Worker:', error));
+        }
+    </script>
 </body>
 </html>
